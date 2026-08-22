@@ -1,0 +1,664 @@
+{
+  "top_1": {
+    "accountName": {
+      "position": [
+        572,
+        342
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "kill": {
+      "position": [
+        811,
+        342
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "PTS": {
+      "position": [],
+      "font_size": null,
+      "color": "#000d34"
+    },
+    "booyah": {
+      "position": [
+        902,
+        342
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "score": {
+      "position": [
+        985,
+        342
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "logo": {
+      "position": [],
+      "font_size": null,
+      "shape": "circle"
+    }
+  },
+  "top_2": {
+    "accountName": {
+      "position": [
+        572,
+        393
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "kill": {
+      "position": [
+        811,
+        393
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "PTS": {
+      "position": [],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "booyah": {
+      "position": [
+        902,
+        393
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "score": {
+      "position": [
+        985,
+        393
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "logo": {
+      "position": [],
+      "font_size": null,
+      "shape": "circle"
+    }
+  },
+  "top_3": {
+    "accountName": {
+      "position": [
+        572,
+        444
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "kill": {
+      "position": [
+        811,
+        444
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "PTS": {
+      "position": [],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "booyah": {
+      "position": [
+        902,
+        444
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "score": {
+      "position": [
+        985,
+        444
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "logo": {
+      "position": [],
+      "font_size": null,
+      "shape": "circle"
+    }
+  },
+  "top_4": {
+    "accountName": {
+      "position": [
+        572,
+        495
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "kill": {
+      "position": [
+        811,
+        495
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "PTS": {
+      "position": [],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "booyah": {
+      "position": [
+        902,
+        495
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "score": {
+      "position": [
+        985,
+        495
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "logo": {
+      "position": [],
+      "font_size": null,
+      "shape": "circle"
+    }
+  },
+  "top_5": {
+    "accountName": {
+      "position": [
+        572,
+        546
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "kill": {
+      "position": [
+        811,
+        546
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "PTS": {
+      "position": [],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "booyah": {
+      "position": [
+        902,
+        546
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "score": {
+      "position": [
+        985,
+        546
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "logo": {
+      "position": [],
+      "font_size": null,
+      "shape": "circle"
+    }
+  },
+  "top_6": {
+    "accountName": {
+      "position": [
+        572,
+        597
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "kill": {
+      "position": [
+        811,
+        597
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "PTS": {
+      "position": [],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "booyah": {
+      "position": [
+        902,
+        597
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "score": {
+      "position": [
+        985,
+        597
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "logo": {
+      "position": [],
+      "font_size": null,
+      "shape": "circle"
+    }
+  },
+  "top_7": {
+    "accountName": {
+      "position": [
+        572,
+        648
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "kill": {
+      "position": [
+        811,
+        648
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "PTS": {
+      "position": [],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "booyah": {
+      "position": [
+        902,
+        648
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "score": {
+      "position": [
+        985,
+        648
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "logo": {
+      "position": [],
+      "font_size": null,
+      "shape": "circle"
+    }
+  },
+  "top_8": {
+    "accountName": {
+      "position": [
+        572,
+        699
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "kill": {
+      "position": [
+        811,
+        699
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "PTS": {
+      "position": [],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "booyah": {
+      "position": [
+        902,
+        699
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "score": {
+      "position": [
+        985,
+        699
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "logo": {
+      "position": [],
+      "font_size": null,
+      "shape": "circle"
+    }
+  },
+  "top_9": {
+    "accountName": {
+      "position": [
+        572,
+        750
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "kill": {
+      "position": [
+        811,
+        750
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "PTS": {
+      "position": [],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "booyah": {
+      "position": [
+        902,
+        750
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "score": {
+      "position": [
+        985,
+        750
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "logo": {
+      "position": [],
+      "font_size": null,
+      "shape": "circle"
+    }
+  },
+  "top_10": {
+    "accountName": {
+      "position": [
+        572,
+        801
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "kill": {
+      "position": [
+        811,
+        801
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "PTS": {
+      "position": [],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "booyah": {
+      "position": [
+        902,
+        801
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "score": {
+      "position": [
+        985,
+        801
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "logo": {
+      "position": [],
+      "font_size": null,
+      "shape": "circle"
+    }
+  },
+  "top_11": {
+    "accountName": {
+      "position": [
+        572,
+        852
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "kill": {
+      "position": [
+        811,
+        852
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "PTS": {
+      "position": [],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "booyah": {
+      "position": [
+        902,
+        852
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "score": {
+      "position": [
+        985,
+        852
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "logo": {
+      "position": [],
+      "font_size": null,
+      "shape": "circle"
+    }
+  },
+  "top_12": {
+    "accountName": {
+      "position": [
+        572,
+        903
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "kill": {
+      "position": [
+        811,
+        903
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "PTS": {
+      "position": [],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "booyah": {
+      "position": [
+        902,
+        903
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "score": {
+      "position": [
+        985,
+        903
+      ],
+      "font_size": 23,
+      "color": "#000d34"
+    },
+    "logo": {
+      "position": [],
+      "font_size": null,
+      "shape": "circle"
+    }
+  },
+  "top_13": {
+    "accountName": {
+      "position": [],
+      "font_size": null,
+      "color": null
+    },
+    "kill": {
+      "position": [],
+      "font_size": null,
+      "color": null
+    },
+    "PTS": {
+      "position": [],
+      "font_size": null,
+      "color": null
+    },
+    "booyah": {
+      "position": [],
+      "font_size": null,
+      "color": null
+    },
+    "score": {
+      "position": [],
+      "font_size": null,
+      "color": null
+    },
+    "logo": {
+      "position": [],
+      "font_size": null,
+      "shape": "circle"
+    }
+  },
+  "top_14": {
+    "accountName": {
+      "position": [],
+      "font_size": null,
+      "color": "black"
+    },
+    "kill": {
+      "position": [],
+      "font_size": null,
+      "color": "black"
+    },
+    "PTS": {
+      "position": [],
+      "font_size": null,
+      "color": "black"
+    },
+    "booyah": {
+      "position": [],
+      "font_size": null,
+      "color": "black"
+    },
+    "score": {
+      "position": [],
+      "font_size": null,
+      "color": "black"
+    },
+    "logo": {
+      "position": [],
+      "font_size": null,
+      "shape": "circle"
+    }
+  },
+  "top_15": {
+    "accountName": {
+      "position": [],
+      "font_size": null,
+      "color": null
+    },
+    "kill": {
+      "position": [],
+      "font_size": null,
+      "color": null
+    },
+    "PTS": {
+      "position": [],
+      "font_size": null,
+      "color": null
+    },
+    "booyah": {
+      "position": [],
+      "font_size": null,
+      "color": null
+    },
+    "score": {
+      "position": [],
+      "font_size": null,
+      "color": null
+    },
+    "logo": {
+      "position": [],
+      "font_size": null,
+      "shape": "circle"
+    }
+  },
+  "custom_name": {
+    "position": [
+      375,
+      1046
+    ],
+    "font_size": 24,
+    "color": "white"
+  },
+  "startTime": {
+    "position": [
+      150,
+      273
+    ],
+    "font_size": 25,
+    "color": "white"
+  },
+  "booyah": {
+    "match_1": [
+      240,
+      396
+    ],
+    "match_2": [
+      240,
+      548
+    ],
+    "match_3": [
+      240,
+      703
+    ],
+    "match_4": [
+      240,
+      805
+    ],
+    "match_5": null,
+    "match_6": null,
+    "font_size": null,
+    "color": "white"
+  }
+}
