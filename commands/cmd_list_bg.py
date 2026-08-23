@@ -18,7 +18,7 @@ class ListBgCog(commands.Cog):
         available = get_available_backgrounds()
 
         if not available:
-            return await interaction.response.send_message("❌ Chưa có background nào.")
+            return await interaction.response.send_message("❌ Chưa có background nào để xem.")
 
         try:
             await interaction.response.defer(ephemeral=True)

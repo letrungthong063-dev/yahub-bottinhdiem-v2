@@ -1,5 +1,3 @@
-"""Thiết lập logging màu cho console. Gọi setup_logging() một lần duy nhất trong bot.py."""
-
 import logging
 
 

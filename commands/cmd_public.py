@@ -13,7 +13,7 @@ class PublicCog(commands.Cog):
     @app_commands.command(name="public", description="Cho phép tất cả mọi người trong server dùng bot")
     async def public(self, interaction: discord.Interaction):
         if str(interaction.user.id) not in self.bot.settings.BOT_OWNERS:
-            return await interaction.response.send_message("❌ Chỉ admin chính mới dùng được.")
+            return await interaction.response.send_message("❌ Chỉ admin chính mới dùng được, hãy liên hệ admin để được hổ trợ.")
 
         guild_id = str(interaction.guild_id)
         storage = self.bot.storage

@@ -11,7 +11,7 @@ class GrantCog(commands.Cog):
     @app_commands.describe(user="User")
     async def grant(self, interaction: discord.Interaction, user: discord.User):
         if str(interaction.user.id) not in self.bot.settings.BOT_OWNERS:
-            return await interaction.response.send_message("❌ Chỉ admin chính mới dùng được.")
+            return await interaction.response.send_message("❌ Chỉ admin chính mới dùng được, hãy liên hệ admin để được hổ trợ.")
 
         guild_id = str(interaction.guild_id)
         storage = self.bot.storage
@@ -25,7 +25,7 @@ class GrantCog(commands.Cog):
             "action": "grant", "guildId": guild_id,
             "by": str(interaction.user.id), "target": str(user.id),
         })
-        await interaction.response.send_message(f"✅ Đã cấp quyền cho {user}")
+        await interaction.response.send_message(f"✅ Đã cấp quyền cho {user}, hãy trai nghiệm bot và liên hệ admin nếu có vấn đề.")
 
 
 async def setup(bot):

@@ -1,5 +1,3 @@
-"""Quản lý cooldown theo key (guild_id + user_id)."""
-
 import asyncio
 import time
 
@@ -9,7 +7,6 @@ class CooldownManager:
         self._cooldowns: dict[str, float] = {}
 
     def remaining(self, key: str) -> int:
-        """Trả về số giây còn lại của cooldown, 0 nếu không còn cooldown."""
         now = time.time()
         if key in self._cooldowns and now < self._cooldowns[key]:
             return int(self._cooldowns[key] - now)

@@ -11,7 +11,7 @@ class RevokeCog(commands.Cog):
     @app_commands.describe(user="User")
     async def revoke(self, interaction: discord.Interaction, user: discord.User):
         if str(interaction.user.id) not in self.bot.settings.BOT_OWNERS:
-            return await interaction.response.send_message("❌ Chỉ admin chính mới dùng được.")
+            return await interaction.response.send_message("❌ Chỉ admin chính mới dùng được, hãy liên hệ admin để được hổ trợ.")
 
         guild_id = str(interaction.guild_id)
         storage = self.bot.storage

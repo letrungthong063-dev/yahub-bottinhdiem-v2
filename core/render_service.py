@@ -1,45 +1,3 @@
-"""
-Render engine DUY NHẤT cho mọi bảng xếp hạng.
-
-Không còn khái niệm "1 renderer / 1 background" — mọi background dùng chung
-đúng 1 hàm render_image() ở đây. Muốn thêm bảng xếp hạng mới, chỉ cần thêm:
-  - backgrounds/<tên>.png   (ảnh nền)
-  - coords/<tên>.json        (toạ độ)
-KHÔNG cần viết thêm code.
-
-=== SCHEMA coords/<tên>.json ===
-{
-  "top_1": {
-    "accountName": {"position": [x,y], "font_size": 23, "color": "#000d34"},
-    "kill":        {"position": [x,y], "font_size": 23, "color": "#000d34"},
-    "PTS":         {"position": [x,y], "font_size": 23, "color": "#000d34"},
-    "booyah":      {"position": [x,y], "font_size": 23, "color": "#000d34"},
-    "score":       {"position": [x,y], "font_size": 23, "color": "#000d34"},
-    "logo": {"position": [x,y], "font_size": 50, "shape": "circle"}
-  },
-  "top_2": { ... }, ...
-
-  "custom_name": {"position": [x,y], "font_size": 35, "color": "white"},
-  "startTime":    {"position": [x,y], "font_size": 28, "color": "white"},
-
-  "booyah": {
-    "match_1": [x,y],
-    "match_2": [x,y],
-    "match_3": null,
-    "font_size": 20,
-    "color": "white"
-  }
-}
-
-Nguyên tắc: CÓ "position" (mảng 2 phần tử) mới vẽ, KHÔNG có / rỗng thì bỏ
-qua — không raise lỗi. Nhờ vậy JSON có thể khai báo dần dần (như hiện tại
-bg3.json mới chỉ có top_1) mà không làm hỏng ảnh.
-
-Field "logo.shape":
-  - "circle" → crop tròn trước khi dán lên ảnh nền.
-  - null (hoặc không có) → giữ nguyên hình ảnh gốc, không crop.
-"""
-
 import os
 import io
 import json
@@ -71,7 +29,6 @@ def _has_position(field_cfg) -> bool:
 
 
 def _draw_field(draw, field_cfg, text, anchor="lm"):
-    """Vẽ 1 field nếu có toạ độ; bỏ qua im lặng nếu không có."""
     if not _has_position(field_cfg):
         return
     x, y = field_cfg["position"]
@@ -80,30 +37,10 @@ def _draw_field(draw, field_cfg, text, anchor="lm"):
     try:
         draw.text((x, y), text, font=font, fill=color, anchor=anchor)
     except TypeError:
-        # Pillow cũ không hỗ trợ anchor
         draw.text((x, y), text, font=font, fill=color)
 
 
-def _apply_shape(img: Image.Image, shape) -> Image.Image:
-    """shape == 'circle' -> crop tròn. shape None (hoặc khác) -> giữ nguyên hình gốc."""
-    if shape != "circle":
-        return img
-    size = min(img.size)
-    img = img.crop((
-        (img.width - size) // 2,
-        (img.height - size) // 2,
-        (img.width + size) // 2,
-        (img.height + size) // 2,
-    ))
-    mask = Image.new("L", (size, size), 0)
-    ImageDraw.Draw(mask).ellipse((0, 0, size, size), fill=255)
-    out = Image.new("RGBA", (size, size))
-    out.paste(img, (0, 0), mask)
-    return out
-
-
 def get_available_backgrounds() -> list:
-    """1 background hợp lệ = có cả backgrounds/<tên>.png lẫn coords/<tên>.json."""
     if not os.path.exists("coords"):
         return []
     names = []
@@ -115,8 +52,7 @@ def get_available_backgrounds() -> list:
     return sorted(names)
 
 
-def render_image(bg_name, leaderboard, start_str, name_str, logo_bytes, logo_map=None, match_details=None):
-    logo_map = logo_map or {}
+def render_image(bg_name, leaderboard, start_str, name_str, logo_bytes=None, match_details=None):
     bg_path = f"backgrounds/{bg_name}.png"
     coord_path = f"coords/{bg_name}.json"
 
@@ -131,11 +67,9 @@ def render_image(bg_name, leaderboard, start_str, name_str, logo_bytes, logo_map
     background = Image.open(bg_path).convert("RGBA")
     draw = ImageDraw.Draw(background)
 
-    # ===== Tên giải đấu =====
     if name_str:
         _draw_field(draw, coords.get("custom_name"), name_str.upper())
 
-    # ===== Thời gian bắt đầu =====
     if start_str:
         try:
             dt = datetime.strptime(start_str, "%d/%m/%Y %H:%M")
@@ -144,21 +78,6 @@ def render_image(bg_name, leaderboard, start_str, name_str, logo_bytes, logo_map
             time_text = start_str
         _draw_field(draw, coords.get("startTime"), time_text)
 
-    # ===== Cache ảnh logo đã load =====
-    _logo_cache = {}
-
-    def load_image(path):
-        if path in _logo_cache:
-            return _logo_cache[path]
-        img = None
-        try:
-            if path and os.path.exists(path):
-                img = Image.open(path).convert("RGBA")
-        except Exception:
-            img = None
-        _logo_cache[path] = img
-        return img
-
     generic_logo_img = None
     if logo_bytes:
         try:
@@ -166,9 +85,6 @@ def render_image(bg_name, leaderboard, start_str, name_str, logo_bytes, logo_map
         except Exception:
             generic_logo_img = None
 
-    # ===== Từng dòng bảng xếp hạng =====
-    # Không giới hạn cố định top 15 — quét tới top_50, dòng nào coords không
-    # định nghĩa thì bỏ qua (cho phép coords khai báo không liên tục).
     for i in range(1, 51):
         slot = coords.get(f"top_{i}")
         if slot is None:
@@ -185,27 +101,12 @@ def render_image(bg_name, leaderboard, start_str, name_str, logo_bytes, logo_map
         _draw_field(draw, slot.get("score"), str(team.get("totalScore", 0)), anchor="mm")
 
         logo_cfg = slot.get("logo")
-        if _has_position(logo_cfg):
+        if _has_position(logo_cfg) and generic_logo_img is not None:
             lx, ly = logo_cfg["position"]
             logo_size = logo_cfg.get("font_size") or 50
-            shape = logo_cfg.get("shape")
+            resized = generic_logo_img.resize((logo_size, logo_size), Image.LANCZOS)
+            background.paste(resized, (int(lx), int(ly)), resized)
 
-            team_logo = None
-            logo_path = team.get("logoPath")
-            if logo_path:
-                team_logo = load_image(logo_path)
-            if team_logo is None and generic_logo_img is not None:
-                team_logo = generic_logo_img
-
-            if team_logo:
-                resized = team_logo.resize((logo_size, logo_size), Image.LANCZOS)
-                final_logo = _apply_shape(resized, shape)
-                background.paste(final_logo, (int(lx), int(ly)), final_logo)
-
-    # ===== Danh sách Booyah từng trận =====
-    # Lưu ý: khác với các field khác (mỗi field 1 object {position,font_size,color}
-    # riêng), "booyah" ở đây là 1 object PHẲNG: mỗi match_N là toạ độ [x,y]
-    # trực tiếp (hoặc null), dùng chung "font_size"/"color" cho mọi trận.
     booyah_cfg = coords.get("booyah")
     if match_details and booyah_cfg:
         font = get_font(booyah_cfg.get("font_size") or 20)

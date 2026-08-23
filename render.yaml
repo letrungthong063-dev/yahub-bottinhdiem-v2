@@ -1,6 +1,6 @@
 services:
   - type: worker
-    name: yahub-bottinhdiem
+    name: yahub-bottinhdiem-v2
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python bot.py
+    startCommand: python yahub.py

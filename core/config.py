@@ -1,15 +1,15 @@
-"""Cấu hình toàn cục: đọc .env / biến môi trường, header gọi API Garena."""
-
 import os
 import logging
+from pathlib import Path
 
 logger = logging.getLogger("yahub-bot")
 
 
-def _load_env(path: str = ".env") -> dict:
+def _load_env(path: str | None = None) -> dict:
     env = {}
-    if os.path.exists(path):
-        with open(path, "r") as f:
+    env_path = Path(path) if path else Path(__file__).resolve().parent.parent / ".env"
+    if env_path.exists():
+        with env_path.open("r", encoding="utf-8-sig") as f:
             for line in f:
                 line = line.strip()
                 if line and not line.startswith("#") and "=" in line:
@@ -22,8 +22,6 @@ def _load_env(path: str = ".env") -> dict:
 
 
 class Settings:
-    """Gói toàn bộ cấu hình bot. Khởi tạo 1 lần trong bot.py."""
-
     def __init__(self):
         env = _load_env()
 

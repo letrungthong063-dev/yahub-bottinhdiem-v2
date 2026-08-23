@@ -1,12 +1,4 @@
-"""Parse các tham số dạng chuỗi của lệnh /bxh."""
-
-
 def parse_team_names(team_names: str) -> dict:
-    """
-    Parse '123456789012=Team A,987654321098=Team B'
-    -> {'1234567890': 'Team A', '9876543210': 'Team B'}  (bỏ 2 số cuối của ID)
-    Raise ValueError nếu sai format.
-    """
     id_to_name = {}
     if not team_names:
         return id_to_name
@@ -28,7 +20,6 @@ def parse_team_names(team_names: str) -> dict:
 
 
 def parse_remove_match(remove_match: str) -> set:
-    """Parse '1,3' -> {1, 3}. Raise ValueError nếu sai format."""
     if not remove_match:
         return set()
     try:

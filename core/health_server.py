@@ -1,5 +1,3 @@
-"""HTTP health-check server nhỏ, chạy song song để Render.com không tắt worker."""
-
 import os
 import threading
 import logging
@@ -21,7 +19,7 @@ class HealthHandler(BaseHTTPRequestHandler):
     def do_OPTIONS(self): self._respond()
 
     def log_message(self, format, *args):
-        pass  # Tắt log HTTP để không rác console
+        pass
 
 
 def _run_http():

@@ -22,9 +22,9 @@ class UptCog(commands.Cog):
         server_count = len(self.bot.guilds)
 
         msg = "**[BOT STATUS]**\n"
-        msg += f"|-- Uptime  : `{hours}h {minutes}m {seconds}s`\n"
-        msg += f"|-- Speed   : `{latency}ms`\n"
-        msg += f"|-- Servers : `{server_count} server`"
+        msg += f" Uptime  : `{hours}h {minutes}m {seconds}s`\n"
+        msg += f" Speed   : `{latency}ms`\n"
+        msg += f" Servers : `{server_count} server`"
 
         await interaction.response.send_message(msg)
 

@@ -1,5 +1,3 @@
-"""Đọc/ghi permissions.json và logs.json. Dùng chung 1 instance Storage cho toàn bộ commands."""
-
 import json
 import os
 from datetime import datetime, timezone
@@ -36,8 +34,6 @@ class Storage:
         data["time"] = datetime.now(timezone.utc).isoformat()
         self.logs.append(data)
         self.save_logs()
-
-    # ---- Helper permission ----
 
     def ensure_guild(self, guild_id: str):
         if guild_id not in self.permissions:

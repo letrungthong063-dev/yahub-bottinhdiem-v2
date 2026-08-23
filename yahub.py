@@ -1,8 +1,3 @@
-"""
-Entry point của bot. Tự động nạp toàn bộ file cmd_*.py trong commands/,
-mỗi file tương ứng đúng 1 lệnh slash (kiến trúc Cogs của discord.py).
-"""
-
 import os
 import time
 import discord

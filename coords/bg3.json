@@ -2,16 +2,16 @@
   "top_1": {
     "accountName": {
       "position": [
-        572,
-        342
+        576,
+        353
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "kill": {
       "position": [
-        811,
-        342
+        824,
+        353
       ],
       "font_size": 23,
       "color": "#000d34"
@@ -23,39 +23,42 @@
     },
     "booyah": {
       "position": [
-        902,
-        342
+        910,
+        353
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "score": {
       "position": [
-        985,
-        342
+        995,
+        353
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "logo": {
-      "position": [],
-      "font_size": null,
-      "shape": "circle"
+      "position": [
+        535,
+        342
+      ],
+      "font_size": 34,
+      "shape": null
     }
   },
   "top_2": {
     "accountName": {
       "position": [
-        572,
-        393
+        576,
+        404
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "kill": {
       "position": [
-        811,
-        393
+        824,
+        404
       ],
       "font_size": 23,
       "color": "#000d34"
@@ -67,39 +70,42 @@
     },
     "booyah": {
       "position": [
-        902,
-        393
+        910,
+        404
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "score": {
       "position": [
-        985,
-        393
+        995,
+        404
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "logo": {
-      "position": [],
-      "font_size": null,
-      "shape": "circle"
+      "position": [
+        535,
+        395
+      ],
+      "font_size": 34,
+      "shape": null
     }
   },
   "top_3": {
     "accountName": {
       "position": [
-        572,
-        444
+        576,
+        455
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "kill": {
       "position": [
-        811,
-        444
+        824,
+        455
       ],
       "font_size": 23,
       "color": "#000d34"
@@ -111,39 +117,42 @@
     },
     "booyah": {
       "position": [
-        902,
-        444
+        910,
+        455
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "score": {
       "position": [
-        985,
-        444
+        995,
+        455
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "logo": {
-      "position": [],
-      "font_size": null,
-      "shape": "circle"
+      "position": [
+        535,
+        446
+      ],
+      "font_size": 34,
+      "shape": null
     }
   },
   "top_4": {
     "accountName": {
       "position": [
-        572,
-        495
+        576,
+        506
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "kill": {
       "position": [
-        811,
-        495
+        824,
+        506
       ],
       "font_size": 23,
       "color": "#000d34"
@@ -155,39 +164,42 @@
     },
     "booyah": {
       "position": [
-        902,
-        495
+        910,
+        506
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "score": {
       "position": [
-        985,
-        495
+        995,
+        506
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "logo": {
-      "position": [],
-      "font_size": null,
-      "shape": "circle"
+      "position": [
+        535,
+        497
+      ],
+      "font_size": 34,
+      "shape": null
     }
   },
   "top_5": {
     "accountName": {
       "position": [
-        572,
-        546
+        576,
+        558
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "kill": {
       "position": [
-        811,
-        546
+        824,
+        558
       ],
       "font_size": 23,
       "color": "#000d34"
@@ -199,39 +211,42 @@
     },
     "booyah": {
       "position": [
-        902,
-        546
+        910,
+        558
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "score": {
       "position": [
-        985,
-        546
+        995,
+        558
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "logo": {
-      "position": [],
-      "font_size": null,
-      "shape": "circle"
+      "position": [
+        535,
+        549
+      ],
+      "font_size": 34,
+      "shape": null
     }
   },
   "top_6": {
     "accountName": {
       "position": [
-        572,
-        597
+        576,
+        608
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "kill": {
       "position": [
-        811,
-        597
+        824,
+        608
       ],
       "font_size": 23,
       "color": "#000d34"
@@ -243,39 +258,42 @@
     },
     "booyah": {
       "position": [
-        902,
-        597
+        910,
+        608
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "score": {
       "position": [
-        985,
-        597
+        995,
+        608
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "logo": {
-      "position": [],
-      "font_size": null,
-      "shape": "circle"
+      "position": [
+        535,
+        599
+      ],
+      "font_size": 34,
+      "shape": null
     }
   },
   "top_7": {
     "accountName": {
       "position": [
-        572,
-        648
+        576,
+        660
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "kill": {
       "position": [
-        811,
-        648
+        824,
+        660
       ],
       "font_size": 23,
       "color": "#000d34"
@@ -287,39 +305,42 @@
     },
     "booyah": {
       "position": [
-        902,
-        648
+        910,
+        660
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "score": {
       "position": [
-        985,
-        648
+        995,
+        660
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "logo": {
-      "position": [],
-      "font_size": null,
-      "shape": "circle"
+      "position": [
+        535,
+        651
+      ],
+      "font_size": 34,
+      "shape": null
     }
   },
   "top_8": {
     "accountName": {
       "position": [
-        572,
-        699
+        576,
+        712
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "kill": {
       "position": [
-        811,
-        699
+        824,
+        712
       ],
       "font_size": 23,
       "color": "#000d34"
@@ -331,39 +352,42 @@
     },
     "booyah": {
       "position": [
-        902,
-        699
+        910,
+        712
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "score": {
       "position": [
-        985,
-        699
+        995,
+        712
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "logo": {
-      "position": [],
-      "font_size": null,
-      "shape": "circle"
+      "position": [
+        535,
+        703
+      ],
+      "font_size": 34,
+      "shape": null
     }
   },
   "top_9": {
     "accountName": {
       "position": [
-        572,
-        750
+        576,
+        763
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "kill": {
       "position": [
-        811,
-        750
+        824,
+        763
       ],
       "font_size": 23,
       "color": "#000d34"
@@ -375,39 +399,42 @@
     },
     "booyah": {
       "position": [
-        902,
-        750
+        910,
+        763
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "score": {
       "position": [
-        985,
-        750
+        995,
+        763
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "logo": {
-      "position": [],
-      "font_size": null,
-      "shape": "circle"
+      "position": [
+        535,
+        754
+      ],
+      "font_size": 34,
+      "shape": null
     }
   },
   "top_10": {
     "accountName": {
       "position": [
-        572,
-        801
+        576,
+        813
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "kill": {
       "position": [
-        811,
-        801
+        824,
+        813
       ],
       "font_size": 23,
       "color": "#000d34"
@@ -419,39 +446,42 @@
     },
     "booyah": {
       "position": [
-        902,
-        801
+        910,
+        813
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "score": {
       "position": [
-        985,
-        801
+        995,
+        813
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "logo": {
-      "position": [],
-      "font_size": null,
-      "shape": "circle"
+      "position": [
+        535,
+        804
+      ],
+      "font_size": 34,
+      "shape": null
     }
   },
   "top_11": {
     "accountName": {
       "position": [
-        572,
-        852
+        576,
+        865
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "kill": {
       "position": [
-        811,
-        852
+        824,
+        865
       ],
       "font_size": 23,
       "color": "#000d34"
@@ -463,39 +493,42 @@
     },
     "booyah": {
       "position": [
-        902,
-        852
+        910,
+        865
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "score": {
       "position": [
-        985,
-        852
+        995,
+        865
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "logo": {
-      "position": [],
-      "font_size": null,
-      "shape": "circle"
+      "position": [
+        535,
+        856
+      ],
+      "font_size": 34,
+      "shape": null
     }
   },
   "top_12": {
     "accountName": {
       "position": [
-        572,
-        903
+        576,
+        916
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "kill": {
       "position": [
-        811,
-        903
+        824,
+        916
       ],
       "font_size": 23,
       "color": "#000d34"
@@ -507,24 +540,27 @@
     },
     "booyah": {
       "position": [
-        902,
-        903
+        910,
+        916
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "score": {
       "position": [
-        985,
-        903
+        995,
+        916
       ],
       "font_size": 23,
       "color": "#000d34"
     },
     "logo": {
-      "position": [],
-      "font_size": null,
-      "shape": "circle"
+      "position": [
+        535,
+        907
+      ],
+      "font_size": 34,
+      "shape": null
     }
   },
   "top_13": {
@@ -626,7 +662,7 @@
   "custom_name": {
     "position": [
       375,
-      1046
+      1063
     ],
     "font_size": 24,
     "color": "white"
@@ -634,7 +670,7 @@
   "startTime": {
     "position": [
       150,
-      273
+      288
     ],
     "font_size": 25,
     "color": "white"
@@ -642,23 +678,24 @@
   "booyah": {
     "match_1": [
       240,
-      396
+      406
     ],
     "match_2": [
       240,
-      548
+      558
     ],
     "match_3": [
       240,
-      703
+      713
     ],
     "match_4": [
       240,
-      805
+      868
     ],
     "match_5": null,
     "match_6": null,
     "font_size": null,
-    "color": "white"
+    "color": "#000d34"
   }
 }
+

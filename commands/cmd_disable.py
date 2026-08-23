@@ -10,7 +10,7 @@ class DisableCog(commands.Cog):
     @app_commands.command(name="disable", description="Tắt bot")
     async def disable(self, interaction: discord.Interaction):
         if str(interaction.user.id) not in self.bot.settings.BOT_OWNERS:
-            return await interaction.response.send_message("❌ Chỉ admin chính mới dùng được.")
+            return await interaction.response.send_message("❌ Chỉ admin chính mới dùng được, hãy liên hệ admin để được hổ trợ.")
 
         guild_id = str(interaction.guild_id)
         storage = self.bot.storage
@@ -19,7 +19,7 @@ class DisableCog(commands.Cog):
 
         storage.save_permissions()
         storage.log_action({"action": "disable", "guildId": guild_id, "by": str(interaction.user.id)})
-        await interaction.response.send_message("⛔ Bot đã tắt ở server này.")
+        await interaction.response.send_message("⛔ Bot đã tắt ở server này, liên hệ admin để được hổ trợ.")
 
 
 async def setup(bot):

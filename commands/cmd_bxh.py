@@ -10,7 +10,6 @@ from core.time_utils import convert_to_timestamp
 from core.text_parsing import parse_team_names, parse_remove_match
 from core.team_aggregator import TeamAggregator
 from core.render_service import render_image
-from core.logo_service import load_logo_map
 from core import api_client
 
 logger = logging.getLogger("yahub-bot")
@@ -20,17 +19,16 @@ class BxhCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @app_commands.command(name="bxh", description="Bảng xếp hạng")
+    @app_commands.command(name="bxh", description="Tạo bảng xếp hạng từ ID-Game và thời gian")
     @app_commands.describe(
-        accountid="id_game",
+        accountid="id game của bạn",
         start_time="Thời gian bắt đầu (ngày/tháng/năm giờ:phút)",
         end_time="Thời gian kết thúc (ngày/tháng/năm giờ:phút)",
         background="Tên background, dùng /list_bg để xem tất cả",
-        custom_name="Tên custom hiển thị trên bảng",
-        logo_custom="Ảnh logo hiển thị cho tất cả đội (không bắt buộc)",
+        custom_name="Tên custom của bạn để hiển thị trên bảng xếp hạng",
+        logo_custom="Ảnh logo hiển thị cho tất cả đội ",
         remove_match="Xóa trận theo số thứ tự, cách nhau bằng dấu phẩy (vd: 1,3)",
         team_names="Đặt tên đội theo ID (vd: 123456789012=Team A,987654321098=Team B)",
-        add_logo="Nhập tên key_logo đã tạo (vd: custom1)",
         champion_rush="Ngưỡng điểm kích hoạt Champion Rush (vd: 50)",
     )
     async def bxh(
@@ -44,7 +42,6 @@ class BxhCog(commands.Cog):
         logo_custom: discord.Attachment = None,
         remove_match: str = "",
         team_names: str = "",
-        add_logo: str = "",
         champion_rush: int = 0,
     ):
         guild_id = str(interaction.guild_id)
@@ -52,8 +49,6 @@ class BxhCog(commands.Cog):
         storage = self.bot.storage
         settings = self.bot.settings
 
-        # Bọc defer trong try/except để tránh lỗi 10062 (Unknown interaction)
-        # Xảy ra khi Render free tier bị spin down, interaction hết hạn 3s trước khi bot kịp xử lý
         try:
             await interaction.response.defer()
         except discord.errors.NotFound:
@@ -66,10 +61,10 @@ class BxhCog(commands.Cog):
             return
 
         if not storage.is_enabled(guild_id):
-            return await interaction.followup.send("❌ Bot chưa bật.")
+            return await interaction.followup.send("❌ Bot chưa được kích hoạt ở server này, hãy liên hệ admin.")
 
         if user_id not in settings.BOT_OWNERS and not storage.is_public(guild_id) and not storage.is_allowed_user(guild_id, user_id):
-            return await interaction.followup.send("❌ Bạn chưa được cấp quyền.")
+            return await interaction.followup.send("❌ Bạn chưa được cấp quyền, hãy liên hệ admin.")
 
         try:
             id_to_name = parse_team_names(team_names)
@@ -78,18 +73,12 @@ class BxhCog(commands.Cog):
                 f"❌ team_names không hợp lệ. {ve}\nFormat đúng: `123456789012=Team A,987654321098=Team B`"
             )
 
-        logo_map = {}
-        if add_logo:
-            logo_map = load_logo_map(add_logo)
-            if not logo_map:
-                return await interaction.followup.send(f"❌ Không tìm thấy bộ logo `{add_logo}`.")
-
         cooldown_key = f"{guild_id}_{user_id}"
         remaining = self.bot.cooldowns.remaining(cooldown_key)
         if remaining > 0:
             logger.info(f"[COOLDOWN] {interaction.user} còn {remaining}s")
-            return await interaction.followup.send(f"⏳ Vui lòng chờ {remaining}s.")
-        self.bot.cooldowns.set(cooldown_key, 10)
+            return await interaction.followup.send(f"⏳ Nhanh quá rồi, hãy đợi {remaining}s.")
+        self.bot.cooldowns.set(cooldown_key, 5)
 
         try:
             fetch_start = time.time()
@@ -102,9 +91,9 @@ class BxhCog(commands.Cog):
                 logger.warning(f"[BXH] remove_match parse lỗi: {e}")
                 return await interaction.followup.send("❌ Tham số remove_match không hợp lệ. Ví dụ: `1,3`")
 
-            logo_bytes = None
             aggregator = TeamAggregator()
             match_details = []
+            logo_bytes = None
 
             async with aiohttp.ClientSession() as session:
                 if logo_custom:
@@ -142,12 +131,12 @@ class BxhCog(commands.Cog):
                         continue
 
                     for team in ranks:
-                        aggregator.add_team_result(team, id_to_name, logo_map, champion_rush)
+                        aggregator.add_team_result(team, id_to_name, champion_rush)
 
             leaderboard = aggregator.build_leaderboard()
 
             if not leaderboard:
-                return await interaction.followup.send("❌ Không tìm thấy dữ liệu.")
+                return await interaction.followup.send("❌ Không tìm thấy dữ liệu trận đấu, hãy kiểm tra lại ID-Game và thời gian.")
 
             elapsed = round(time.time() - fetch_start, 1)
             so_doi = len(leaderboard)
@@ -155,21 +144,21 @@ class BxhCog(commands.Cog):
 
             info = "🔍 **Thông tin chung**\n"
             info += f"🎮 ID-Game: `{accountid}`\n"
-            info += f"⏱️  Time: `{elapsed}s`\n"
-            info += f"🕐 Start-time: `{start_time}`\n"
-            info += f"🕐 End-time: `{end_time}`\n"
-            info += f"👥 Team: `{so_doi} đội`\n\n"
+            info += f"⏱️ Thời gian: `{elapsed}s`\n"
+            info += f"🕐 Thời gian bắt đầu: `{start_time}`\n"
+            info += f"🕐 Thời gian kết thúc: `{end_time}`\n"
+            info += f"👥 Số đội: `{so_doi} đội`\n\n"
 
             info += f"🔍 **Danh sách {len(match_details)} trận:**\n"
             for m in match_details:
-                status = "✅ success" if m["success"] else "❌ Thất bại"
-                info += f"📄 Number {m['index']}:\n"
+                status = "✅ Hoàn thành" if m['booyah'] != "Không có" else "⚠️ Chưa hoàn thành"
+                info += f"📄 Trận {m['index']}:\n"
                 info += f"🆔 MatchID: `{m['id']}`\n"
-                info += f"🚦 Status: {status}\n"
+                info += f"🏆 Trạng thái: `{status}`\n"
                 info += f"🥇 Booyah: `{m['booyah']}`\n"
             info += "└─────────────────"
 
-            image = render_image(background, leaderboard, start_time, custom_name, logo_bytes, logo_map, match_details=match_details)
+            image = render_image(background, leaderboard, start_time, custom_name, logo_bytes, match_details=match_details)
 
             await interaction.followup.send(
                 content=info,
