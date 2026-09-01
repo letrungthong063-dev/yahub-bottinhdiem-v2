@@ -153,9 +153,9 @@ class BxhCog(commands.Cog):
             for m in match_details:
                 status = "✅ Hoàn thành" if m['booyah'] != "Không có" else "⚠️ Chưa hoàn thành"
                 info += f"📄 Trận {m['index']}:\n"
-                info += f"🆔 MatchID: `{m['id']}`\n"
-                info += f"🏆 Trạng thái: `{status}`\n"
-                info += f"🥇 Booyah: `{m['booyah']}`\n"
+                info += f"|—🆔 MatchID: `{m['id']}`\n"
+                info += f"|—🏆 Trạng thái: `{status}`\n"
+                info += f"|—🥇 Booyah: `{m['booyah']}`\n"
             info += "└─────────────────"
 
             image = render_image(background, leaderboard, start_time, custom_name, logo_bytes, match_details=match_details)
